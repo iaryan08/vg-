@@ -2,7 +2,11 @@
 
 /**
  * @fileOverview An orchestrator flow that takes a URL, fetches its content,
+<<<<<<< HEAD
  * classifies it, summarizes it, and generates tags for it.
+=======
+ * classifies it, and summarizes it.
+>>>>>>> a99bb5b93e16a4ead5edf2e777a0d89891ddb0d1
  *
  * - processUrl - The main function to process a URL.
  * - ProcessUrlInput - The input type for the processUrl function.
@@ -14,7 +18,10 @@ import { z } from 'genkit';
 import { JSDOM } from 'jsdom';
 import { classifyBlogType } from './classify-blog-type';
 import { summarizeBlogArticle } from './summarize-blog-article';
+<<<<<<< HEAD
 import { generateTags } from './generate-tags-flow';
+=======
+>>>>>>> a99bb5b93e16a4ead5edf2e777a0d89891ddb0d1
 
 const ProcessUrlInputSchema = z.object({
   url: z.string().url().describe('The URL of the webpage to process.'),
@@ -30,16 +37,22 @@ const ClassifyBlogTypeOutputSchema = z.object({
 const SummarizeBlogArticleOutputSchema = z.object({
   summary: z.string().describe('A concise summary of the blog article.'),
 });
+<<<<<<< HEAD
 const GenerateTagsOutputSchema = z.object({
   tags: z.array(z.string()).describe('A list of 5-7 relevant, lowercase tags for the article. Tags should be one or two words.'),
 });
+=======
+>>>>>>> a99bb5b93e16a4ead5edf2e777a0d89891ddb0d1
 
 
 const ProcessUrlOutputSchema = z.object({
   title: z.string().describe('The title of the webpage.'),
   classification: ClassifyBlogTypeOutputSchema.describe('The classification result.'),
   summary: SummarizeBlogArticleOutputSchema.describe('The summarization result.'),
+<<<<<<< HEAD
   tags: GenerateTagsOutputSchema.describe('A list of AI-generated tags for the content.'),
+=======
+>>>>>>> a99bb5b93e16a4ead5edf2e777a0d89891ddb0d1
 });
 export type ProcessUrlOutput = z.infer<typeof ProcessUrlOutputSchema>;
 
@@ -76,6 +89,7 @@ const processUrlFlow = ai.defineFlow(
     const headerContent = document.querySelector('header')?.innerHTML;
     const footerContent = document.querySelector('footer')?.innerHTML;
 
+<<<<<<< HEAD
     // 3. Extract main text for summarization and tagging
     const mainContentEl = document.querySelector('main') || document.querySelector('article') || document.body;
     // Clone the main content element to avoid modifying the original for classification
@@ -86,14 +100,30 @@ const processUrlFlow = ai.defineFlow(
 
     // 4. Run classification, summarization, and tagging flows in parallel
     const [classification, summary, tags] = await Promise.all([
+=======
+    // 3. Extract main text for summarization
+    const mainContentEl = document.querySelector('main') || document.querySelector('article') || document.body;
+    // Clone the main content element to avoid modifying the original for classification
+    const contentToSummarize = mainContentEl.cloneNode(true) as HTMLElement;
+    contentToSummarize.querySelectorAll('script, style, noscript, header, footer, nav').forEach((el) => el.remove());
+    const articleText = (contentToSummarize.textContent || '').replace(/\s+/g, ' ').trim();
+
+
+    // 4. Run classification and summarization flows in parallel
+    const [classification, summary] = await Promise.all([
+>>>>>>> a99bb5b93e16a4ead5edf2e777a0d89891ddb0d1
       classifyBlogType({
         url,
         domainContent,
         headerContent,
         footerContent,
       }),
+<<<<<<< HEAD
       summarizeBlogArticle({ articleText }),
       generateTags({ articleText }),
+=======
+      summarizeBlogArticle({ articleText })
+>>>>>>> a99bb5b93e16a4ead5edf2e777a0d89891ddb0d1
     ]);
 
     // 5. Return the combined result
@@ -101,7 +131,10 @@ const processUrlFlow = ai.defineFlow(
       title,
       classification,
       summary,
+<<<<<<< HEAD
       tags,
+=======
+>>>>>>> a99bb5b93e16a4ead5edf2e777a0d89891ddb0d1
     };
   }
 );

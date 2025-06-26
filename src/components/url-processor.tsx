@@ -117,6 +117,7 @@ export default function URLProcessor() {
           </CardHeader>
           <CardContent>
             <h3 className="font-semibold mb-2 text-foreground">Summary</h3>
+<<<<<<< HEAD
             <p className="text-muted-foreground mb-4">{result?.summary?.summary ?? 'No summary available.'}</p>
             
             {result.tags?.tags && result.tags.tags.length > 0 && (
@@ -131,6 +132,9 @@ export default function URLProcessor() {
                  </div>
               </div>
             )}
+=======
+            <p className="text-muted-foreground">{result?.summary?.summary ?? 'No summary available.'}</p>
+>>>>>>> a99bb5b93e16a4ead5edf2e777a0d89891ddb0d1
           </CardContent>
         </Card>
       )}

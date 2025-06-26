@@ -2,7 +2,10 @@
   "name": "veritas",
   "version": "0.1.0",
   "private": true,
+<<<<<<< HEAD
   "description": "Veritas: An AI-powered search and content analysis engine.",
+=======
+>>>>>>> a99bb5b93e16a4ead5edf2e777a0d89891ddb0d1
   "scripts": {
     "dev": "next dev --turbopack -p 9002",
     "genkit:dev": "genkit start -- tsx src/ai/dev.ts",

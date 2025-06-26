@@ -3,12 +3,17 @@ import { allResults } from '@/lib/data';
 import { notFound } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+<<<<<<< HEAD
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { cn } from '@/lib/utils';
 import { BookmarkButton } from '@/components/bookmark-button';
+=======
+import { ArrowLeft } from 'lucide-react';
+import Image from 'next/image';
+>>>>>>> a99bb5b93e16a4ead5edf2e777a0d89891ddb0d1
 
 export function generateStaticParams() {
   return allResults.map((post) => ({
@@ -40,6 +45,7 @@ export default function ArticlePage({ params }: { params: { id: string } }) {
     notFound();
   }
 
+<<<<<<< HEAD
   const relatedArticles = allResults
     .filter((r) => r.id !== article.id && r.tags && article.tags)
     .map((r) => {
@@ -50,6 +56,8 @@ export default function ArticlePage({ params }: { params: { id: string } }) {
     .sort((a, b) => b.commonTags - a.commonTags)
     .slice(0, 3);
 
+=======
+>>>>>>> a99bb5b93e16a4ead5edf2e777a0d89891ddb0d1
   return (
     <main className="container mx-auto px-4 py-8 md:py-16 flex flex-col items-center min-h-screen">
       <div className="w-full max-w-4xl">
@@ -63,12 +71,18 @@ export default function ArticlePage({ params }: { params: { id: string } }) {
         </div>
         <article>
           <header className="mb-8 border-b pb-8">
+<<<<<<< HEAD
             <div className="flex justify-between items-start gap-4">
               <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-foreground">
                 {article.title}
               </h1>
               <BookmarkButton articleId={article.id} className="shrink-0" />
             </div>
+=======
+            <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-foreground">
+              {article.title}
+            </h1>
+>>>>>>> a99bb5b93e16a4ead5edf2e777a0d89891ddb0d1
             <div className="text-lg text-muted-foreground">
               <span>
                 By {article.author} &middot; A{' '}
@@ -92,6 +106,7 @@ export default function ArticlePage({ params }: { params: { id: string } }) {
                 </div>
               )}
             </div>
+<<<<<<< HEAD
              {article.tags && article.tags.length > 0 && (
               <div className="mt-4 flex flex-wrap gap-2">
                 {article.tags.map((tag) => (
@@ -101,6 +116,8 @@ export default function ArticlePage({ params }: { params: { id: string } }) {
                 ))}
               </div>
             )}
+=======
+>>>>>>> a99bb5b93e16a4ead5edf2e777a0d89891ddb0d1
           </header>
 
           <Image
@@ -119,6 +136,7 @@ export default function ArticlePage({ params }: { params: { id: string } }) {
             ))}
           </div>
         </article>
+<<<<<<< HEAD
 
         {relatedArticles.length > 0 && (
           <section className="mt-16 pt-12 border-t w-full">
@@ -147,6 +165,8 @@ export default function ArticlePage({ params }: { params: { id: string } }) {
             </div>
           </section>
         )}
+=======
+>>>>>>> a99bb5b93e16a4ead5edf2e777a0d89891ddb0d1
       </div>
     </main>
   );

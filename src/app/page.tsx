@@ -11,7 +11,10 @@ import {
 import SearchForm from '@/components/search-form';
 import headlinesData from '@/lib/news-data.json';
 import ParticlesBackground from '@/components/particles-background';
+<<<<<<< HEAD
 import { UserButton } from '@/components/user-button';
+=======
+>>>>>>> a99bb5b93e16a4ead5edf2e777a0d89891ddb0d1
 
 type Article = {
   source: {
@@ -33,6 +36,40 @@ type NewsApiResponse = {
   articles: Article[];
 };
 
+<<<<<<< HEAD
+=======
+/*
+async function getTopHeadlines() {
+  const apiKey = process.env.NEWS_API_KEY;
+  if (!apiKey) {
+    console.error('News API key is not configured.');
+    return [];
+  }
+
+  try {
+    const response = await fetch(
+      `https://newsapi.org/v2/top-headlines?country=us&apiKey=${apiKey}`,
+      {
+        next: { revalidate: 3600 }, // Revalidate every hour
+      }
+    );
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      console.error('News API error:', errorData);
+      return [];
+    }
+
+    const data: NewsApiResponse = await response.json();
+    return data.articles;
+  } catch (error) {
+    console.error('Failed to fetch top headlines:', error);
+    return [];
+  }
+}
+*/
+
+>>>>>>> a99bb5b93e16a4ead5edf2e777a0d89891ddb0d1
 export default function Home() {
   const headlines = headlinesData.articles.filter(
     (article) => article.urlToImage
@@ -41,6 +78,7 @@ export default function Home() {
   return (
     <div className="relative min-h-screen">
       <ParticlesBackground />
+<<<<<<< HEAD
       <header className="absolute top-0 left-0 right-0 z-20">
         <div className="container mx-auto flex items-center justify-between p-4">
             <Link href="/" className="mr-auto flex items-center gap-2">
@@ -51,6 +89,10 @@ export default function Home() {
       </header>
       <main className="container mx-auto flex min-h-screen flex-col items-center justify-center p-4 relative z-10">
         <div className="w-full max-w-2xl text-center">
+=======
+      <main className="container mx-auto flex min-h-screen flex-col items-center p-4 relative z-10">
+        <div className="w-full max-w-2xl text-center py-16 md:py-24">
+>>>>>>> a99bb5b93e16a4ead5edf2e777a0d89891ddb0d1
           <h1 className="mb-4 bg-focus-gradient bg-400 animate-gradient-flow bg-clip-text text-4xl font-bold tracking-tight text-transparent md:text-6xl font-serif">
             Veritas
           </h1>
@@ -61,7 +103,11 @@ export default function Home() {
         </div>
 
         {headlines.length > 0 && (
+<<<<<<< HEAD
           <section className="w-full max-w-6xl mt-24">
+=======
+          <section className="w-full max-w-6xl">
+>>>>>>> a99bb5b93e16a4ead5edf2e777a0d89891ddb0d1
             <h2 className="text-3xl font-bold tracking-tight mb-8 text-center font-serif text-foreground [text-shadow:0_2px_4px_rgba(0,0,0,0.5)]">
               Top Headlines
             </h2>

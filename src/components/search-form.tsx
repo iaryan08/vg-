@@ -1,7 +1,11 @@
 
 'use client';
 
+<<<<<<< HEAD
 import { useState, useEffect, useRef } from 'react';
+=======
+import { useState, useEffect } from 'react';
+>>>>>>> a99bb5b93e16a4ead5edf2e777a0d89891ddb0d1
 import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import {
@@ -13,10 +17,15 @@ import {
   DialogTrigger,
 } from '@/components/ui/dialog';
 import { Input } from '@/components/ui/input';
+<<<<<<< HEAD
 import { Search, Wand2, History } from 'lucide-react';
 import URLProcessor from '@/components/url-processor';
 import { useSearchHistory } from '@/hooks/use-search-history';
 import { Card, CardContent } from '@/components/ui/card';
+=======
+import { Search, Wand2 } from 'lucide-react';
+import URLProcessor from '@/components/url-processor';
+>>>>>>> a99bb5b93e16a4ead5edf2e777a0d89891ddb0d1
 
 const searchSuggestions = [
   "Search for 'machine learning'...",
@@ -32,9 +41,12 @@ export default function SearchForm() {
   const [searchTerm, setSearchTerm] = useState('');
   const [currentPlaceholder, setCurrentPlaceholder] = useState(searchSuggestions[0]);
   const router = useRouter();
+<<<<<<< HEAD
   const { history, addSearchTerm } = useSearchHistory();
   const [showHistory, setShowHistory] = useState(false);
   const searchWrapperRef = useRef<HTMLDivElement>(null);
+=======
+>>>>>>> a99bb5b93e16a4ead5edf2e777a0d89891ddb0d1
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -47,6 +59,7 @@ export default function SearchForm() {
 
     return () => clearInterval(interval);
   }, []);
+<<<<<<< HEAD
   
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -57,16 +70,22 @@ export default function SearchForm() {
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
+=======
+>>>>>>> a99bb5b93e16a4ead5edf2e777a0d89891ddb0d1
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
     const trimmedSearch = searchTerm.trim();
     if (trimmedSearch) {
+<<<<<<< HEAD
       addSearchTerm(trimmedSearch);
+=======
+>>>>>>> a99bb5b93e16a4ead5edf2e777a0d89891ddb0d1
       router.push(`/search?q=${encodeURIComponent(trimmedSearch)}`);
     }
   };
 
+<<<<<<< HEAD
   const handleHistoryClick = (term: string) => {
     addSearchTerm(term);
     router.push(`/search?q=${encodeURIComponent(term)}`);
@@ -75,6 +94,10 @@ export default function SearchForm() {
 
   return (
     <div className="w-full relative" ref={searchWrapperRef}>
+=======
+  return (
+    <div className="w-full">
+>>>>>>> a99bb5b93e16a4ead5edf2e777a0d89891ddb0d1
       <form
         onSubmit={handleSearch}
         className="mt-4 flex w-full items-center gap-2"
@@ -87,7 +110,10 @@ export default function SearchForm() {
             className="h-12 pl-10 text-base"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
+<<<<<<< HEAD
             onFocus={() => setShowHistory(true)}
+=======
+>>>>>>> a99bb5b93e16a4ead5edf2e777a0d89891ddb0d1
             aria-label="Search"
           />
         </div>
@@ -128,6 +154,7 @@ export default function SearchForm() {
           </DialogContent>
         </Dialog>
       </form>
+<<<<<<< HEAD
        {showHistory && history.length > 0 && (
           <Card className="absolute top-full mt-2 w-full shadow-lg z-50">
               <CardContent className="p-2">
@@ -144,6 +171,8 @@ export default function SearchForm() {
               </CardContent>
           </Card>
       )}
+=======
+>>>>>>> a99bb5b93e16a4ead5edf2e777a0d89891ddb0d1
       <p className="mt-3 flex items-center justify-center gap-1.5 text-sm text-muted-foreground">
         Or try the URL Analyzer
         <Wand2 className="inline-block h-4 w-4 text-primary" />

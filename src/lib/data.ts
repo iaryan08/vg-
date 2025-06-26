@@ -9,7 +9,10 @@ export type SearchResult = {
   content: string;
   image: string;
   imageHint: string;
+<<<<<<< HEAD
   tags?: string[];
+=======
+>>>>>>> a99bb5b93e16a4ead5edf2e777a0d89891ddb0d1
   sourceUrl?: string;
   sourceName?: string;
 };
@@ -41,7 +44,10 @@ export const allResults: SearchResult[] = [
         link: "/article/1",
         author: authors[0],
         type: "article",
+<<<<<<< HEAD
         tags: ["slow living", "mindfulness", "lifestyle", "wellness"],
+=======
+>>>>>>> a99bb5b93e16a4ead5edf2e777a0d89891ddb0d1
         content: generateContent("The Art of Slow Living in a Fast-Paced World"),
         image: "https://placehold.co/1200x600.png",
         imageHint: "slow living",
@@ -55,7 +61,10 @@ export const allResults: SearchResult[] = [
         link: "/article/2",
         author: authors[1],
         type: "blog",
+<<<<<<< HEAD
         tags: ["veganism", "sustainability", "food", "ethics"],
+=======
+>>>>>>> a99bb5b93e16a4ead5edf2e777a0d89891ddb0d1
         content: generateContent("My Journey into Sustainable Veganism"),
         image: "https://placehold.co/1200x600.png",
         imageHint: "vegan food",
@@ -69,7 +78,10 @@ export const allResults: SearchResult[] = [
         link: "/article/3",
         author: authors[2],
         type: "article",
+<<<<<<< HEAD
         tags: ["quantum computing", "technology", "science", "physics"],
+=======
+>>>>>>> a99bb5b93e16a4ead5edf2e777a0d89891ddb0d1
         content: generateContent("Demystifying Quantum Computing: A Beginner's Guide"),
         image: "https://placehold.co/1200x600.png",
         imageHint: "quantum computing",
@@ -83,7 +95,10 @@ export const allResults: SearchResult[] = [
         link: "/article/4",
         author: authors[3],
         type: "blog",
+<<<<<<< HEAD
         tags: ["travel", "solo travel", "backpacking", "asia"],
+=======
+>>>>>>> a99bb5b93e16a4ead5edf2e777a0d89891ddb0d1
         content: generateContent("Solo Travel in Southeast Asia: A Backpacker's Diary"),
         image: "https://placehold.co/1200x600.png",
         imageHint: "southeast asia",
@@ -97,7 +112,10 @@ export const allResults: SearchResult[] = [
         link: "/article/5",
         author: authors[4],
         type: "article",
+<<<<<<< HEAD
         tags: ["smart home", "diy", "technology", "iot"],
+=======
+>>>>>>> a99bb5b93e16a4ead5edf2e777a0d89891ddb0d1
         content: generateContent("Building a Smart Home on a Budget"),
         image: "https://placehold.co/1200x600.png",
         imageHint: "smart home",
@@ -111,7 +129,10 @@ export const allResults: SearchResult[] = [
         link: "/article/6",
         author: authors[5],
         type: "article",
+<<<<<<< HEAD
         tags: ["open source", "programming", "community", "philosophy"],
+=======
+>>>>>>> a99bb5b93e16a4ead5edf2e777a0d89891ddb0d1
         content: generateContent("The Philosophy of Open Source Contribution"),
         image: "https://placehold.co/1200x600.png",
         imageHint: "open source",
@@ -125,7 +146,10 @@ export const allResults: SearchResult[] = [
         link: "/article/7",
         author: authors[0],
         type: "article",
+<<<<<<< HEAD
         tags: ["css", "web development", "frontend", "programming"],
+=======
+>>>>>>> a99bb5b93e16a4ead5edf2e777a0d89891ddb0d1
         content: generateContent("A Deep Dive into Modern CSS Techniques"),
         image: "https://placehold.co/1200x600.png",
         imageHint: "css code",
@@ -139,7 +163,10 @@ export const allResults: SearchResult[] = [
         link: "/article/8",
         author: authors[1],
         type: "blog",
+<<<<<<< HEAD
         tags: ["gardening", "urban farming", "diy", "sustainability"],
+=======
+>>>>>>> a99bb5b93e16a4ead5edf2e777a0d89891ddb0d1
         content: generateContent("Urban Gardening: Growing Your Own Food in the City"),
         image: "https://placehold.co/1200x600.png",
         imageHint: "urban garden",
@@ -153,7 +180,10 @@ export const allResults: SearchResult[] = [
         link: "/article/9",
         author: authors[2],
         type: "article",
+<<<<<<< HEAD
         tags: ["language", "learning", "self improvement", "polyglot"],
+=======
+>>>>>>> a99bb5b93e16a4ead5edf2e777a0d89891ddb0d1
         content: generateContent("Learning a New Language as an Adult: It's Not Too Late"),
         image: "https://placehold.co/1200x600.png",
         imageHint: "language learning",
@@ -167,7 +197,10 @@ export const allResults: SearchResult[] = [
         link: "/article/10",
         author: authors[3],
         type: "article",
+<<<<<<< HEAD
         tags: ["game dev", "indie games", "gaming", "technology"],
+=======
+>>>>>>> a99bb5b93e16a4ead5edf2e777a0d89891ddb0d1
         content: generateContent("The Rise of Indie Game Development"),
         image: "https://placehold.co/1200x600.png",
         imageHint: "game development",
@@ -181,7 +214,10 @@ export const allResults: SearchResult[] = [
         link: "/article/11",
         author: authors[4],
         type: "blog",
+<<<<<<< HEAD
         tags: ["minimalism", "lifestyle", "self improvement", "happiness"],
+=======
+>>>>>>> a99bb5b93e16a4ead5edf2e777a0d89891ddb0d1
         content: generateContent("Minimalism for a Meaningful Life: My Story"),
         image: "https://placehold.co/1200x600.png",
         imageHint: "minimalism life",

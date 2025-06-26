@@ -1,7 +1,11 @@
 
 'use client';
 
+<<<<<<< HEAD
 import { useState, useMemo, useEffect, Suspense, useRef } from 'react';
+=======
+import { useState, useMemo, useEffect, Suspense } from 'react';
+>>>>>>> a99bb5b93e16a4ead5edf2e777a0d89891ddb0d1
 import { useSearchParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { Input } from '@/components/ui/input';
@@ -14,18 +18,26 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
+<<<<<<< HEAD
 import { Search, History, ArrowRight, Star, Bot, SearchX } from 'lucide-react';
+=======
+import { Search, Link as LinkIcon, ArrowRight, Star, Palette, Bot, SearchX } from 'lucide-react';
+>>>>>>> a99bb5b93e16a4ead5edf2e777a0d89891ddb0d1
 import { allResults } from '@/lib/data';
 import AuthorCard from '@/components/author-card';
 import AuthorCardArchita from '@/components/author-card-archita';
 import { motion } from 'framer-motion';
 import { summarizeSearchQuery, SummarizeSearchQueryOutput } from '@/ai/flows/summarize-search-query';
 import { Skeleton } from '@/components/ui/skeleton';
+<<<<<<< HEAD
 import { Badge } from '@/components/ui/badge';
 import { useSearchHistory } from '@/hooks/use-search-history';
 import { cn } from '@/lib/utils';
 import { UserButton } from '@/components/user-button';
 import { BookmarkButton } from '@/components/bookmark-button';
+=======
+import { cn } from '@/lib/utils';
+>>>>>>> a99bb5b93e16a4ead5edf2e777a0d89891ddb0d1
 
 const ITEMS_PER_PAGE = 10;
 
@@ -44,9 +56,12 @@ function SearchResults() {
     const [searchTerm, setSearchTerm] = useState(query);
     const [aiSummary, setAiSummary] = useState<SummarizeSearchQueryOutput | null>(null);
     const [isAiSummaryLoading, setIsAiSummaryLoading] = useState(false);
+<<<<<<< HEAD
     const { history, addSearchTerm } = useSearchHistory();
     const [showHistory, setShowHistory] = useState(false);
     const searchWrapperRef = useRef<HTMLDivElement>(null);
+=======
+>>>>>>> a99bb5b93e16a4ead5edf2e777a0d89891ddb0d1
     
     useEffect(() => {
         setSearchTerm(query);
@@ -73,6 +88,7 @@ function SearchResults() {
 
         fetchAiSummary();
     }, [query]);
+<<<<<<< HEAD
     
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
@@ -105,6 +121,16 @@ function SearchResults() {
         router.push(`/search?${newParams.toString()}`);
         setShowHistory(false);
     }
+=======
+
+    const handleSearch = (e: React.FormEvent) => {
+        e.preventDefault();
+        const newParams = new URLSearchParams(searchParams.toString());
+        newParams.set('q', searchTerm.trim());
+        newParams.set('page', '1');
+        router.push(`/search?${newParams.toString()}`);
+    };
+>>>>>>> a99bb5b93e16a4ead5edf2e777a0d89891ddb0d1
 
     const handleFilterChange = (newFilter: string) => {
         const newParams = new URLSearchParams(searchParams.toString());
@@ -131,8 +157,12 @@ function SearchResults() {
                 (r) =>
                     r.title.toLowerCase().includes(lowercasedQuery) ||
                     r.summary.toLowerCase().includes(lowercasedQuery) ||
+<<<<<<< HEAD
                     r.author.toLowerCase().includes(lowercasedQuery) ||
                     r.tags?.some(tag => tag.toLowerCase().includes(lowercasedQuery))
+=======
+                    r.author.toLowerCase().includes(lowercasedQuery)
+>>>>>>> a99bb5b93e16a4ead5edf2e777a0d89891ddb0d1
             );
         }
         
@@ -166,6 +196,7 @@ function SearchResults() {
             <Link href="/" className="mr-auto flex items-center gap-2">
               <h1 className="text-2xl font-bold tracking-tight font-serif">Veritas</h1>
             </Link>
+<<<<<<< HEAD
             <div ref={searchWrapperRef} className="relative hidden w-full max-w-sm sm:block">
               <form onSubmit={handleSearch} className="flex items-center gap-2">
                 <div className="relative flex-grow">
@@ -199,10 +230,29 @@ function SearchResults() {
               )}
             </div>
             <UserButton />
+=======
+            <form onSubmit={handleSearch} className="hidden w-full max-w-sm sm:flex items-center gap-2">
+              <div className="relative flex-grow">
+                <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+                <Input
+                  type="search"
+                  placeholder="Search..."
+                  className="pl-10 text-base h-10"
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  aria-label="Search"
+                />
+              </div>
+              <Button type="submit" className="h-10">
+                Search
+              </Button>
+            </form>
+>>>>>>> a99bb5b93e16a4ead5edf2e777a0d89891ddb0d1
           </div>
         </header>
 
         <div className="container mx-auto px-4 py-8 md:py-12">
+<<<<<<< HEAD
             <div ref={searchWrapperRef} className="relative sm:hidden w-full mx-auto mb-8">
               <form onSubmit={handleSearch} className="flex items-center gap-2">
                   <div className="relative flex-grow">
@@ -236,6 +286,22 @@ function SearchResults() {
                   </Card>
               )}
             </div>
+=======
+            <form onSubmit={handleSearch} className="sm:hidden w-full mx-auto mb-8 flex items-center gap-2">
+                <div className="relative flex-grow">
+                    <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+                    <Input
+                        type="search"
+                        placeholder="Search for articles, topics, or people..."
+                        className="pl-10 text-base h-12"
+                        value={searchTerm}
+                        onChange={(e) => setSearchTerm(e.target.value)}
+                        aria-label="Search"
+                    />
+                </div>
+                <Button type="submit" size="lg" className="h-12">Search</Button>
+            </form>
+>>>>>>> a99bb5b93e16a4ead5edf2e777a0d89891ddb0d1
           <div className="w-full max-w-4xl mx-auto">
             <div className="flex flex-col sm:flex-row justify-between items-baseline mb-8 border-b pb-4">
               <div className="flex items-center gap-2 mb-4 sm:mb-0">
@@ -330,11 +396,18 @@ function SearchResults() {
                         transition={{ duration: 0.3, delay: index * 0.05 }}
                       >
                       <Card
+<<<<<<< HEAD
                         className="bg-card border-border hover:border-primary/50 transition-colors duration-300 shadow-sm group flex flex-col relative"
                       >
                         <BookmarkButton articleId={result.id} className="absolute top-2 right-2 z-10" />
                         <CardHeader className="flex-grow">
                            <CardTitle className="text-xl tracking-tight pr-8">
+=======
+                        className="bg-card border-border hover:border-primary/50 transition-colors duration-300 shadow-sm group"
+                      >
+                        <CardHeader>
+                           <CardTitle className="text-xl tracking-tight">
+>>>>>>> a99bb5b93e16a4ead5edf2e777a0d89891ddb0d1
                             <Link href={`/article/${result.id}`} className="hover:underline decoration-primary underline-offset-4">
                               {result.title}
                             </Link>
@@ -347,6 +420,7 @@ function SearchResults() {
                         <CardContent>
                            <p className="text-muted-foreground line-clamp-2">{result.summary}</p>
                         </CardContent>
+<<<<<<< HEAD
                         <CardFooter className="flex flex-col items-start gap-4">
                            {result.tags && result.tags.length > 0 && (
                             <div className="flex flex-wrap gap-2">
@@ -357,6 +431,9 @@ function SearchResults() {
                                 ))}
                             </div>
                            )}
+=======
+                        <CardFooter>
+>>>>>>> a99bb5b93e16a4ead5edf2e777a0d89891ddb0d1
                            <Button asChild variant="link" className="text-primary p-0 h-auto font-semibold">
                              <Link href={`/article/${result.id}`}>
                                <span className="group-hover:bg-focus-gradient bg-400 group-hover:animate-gradient-flow group-hover:text-transparent group-hover:bg-clip-text">Read More</span>

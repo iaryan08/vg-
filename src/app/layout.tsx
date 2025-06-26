@@ -1,8 +1,14 @@
+<<<<<<< HEAD
 
 import type { Metadata } from 'next';
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 import { AuthProvider } from '@/context/auth-provider';
+=======
+import type { Metadata } from 'next';
+import './globals.css';
+import { Toaster } from '@/components/ui/toaster';
+>>>>>>> a99bb5b93e16a4ead5edf2e777a0d89891ddb0d1
 
 export const metadata: Metadata = {
   title: 'Veritas',
@@ -25,10 +31,15 @@ export default function RootLayout({
         />
       </head>
       <body className="font-body antialiased">
+<<<<<<< HEAD
         <AuthProvider>
           {children}
           <Toaster />
         </AuthProvider>
+=======
+        {children}
+        <Toaster />
+>>>>>>> a99bb5b93e16a4ead5edf2e777a0d89891ddb0d1
       </body>
     </html>
   );
